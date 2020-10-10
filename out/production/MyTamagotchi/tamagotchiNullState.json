@@ -1,0 +1,15 @@
+{"mood": null,
+  "minHealth":null,
+  "health":null,
+  "minMood":null,
+  "creation_date": null,
+  "death_date":null,
+  "Type": null,
+  "maxAge":null,
+  "maxMood":null,
+  "minAge":null,
+  "name": null,
+  "last_feeding_date": null,
+  "maxHealth": null,
+  "age": null
+}

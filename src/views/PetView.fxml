@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<StackPane fx:id="stackPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="464.0" prefWidth="741.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PetController">
+   <children>
+      <TextField fx:id="textField_health" maxHeight="31.0" maxWidth="164.0" prefHeight="31.0" prefWidth="164.0" StackPane.alignment="TOP_RIGHT">
+         <StackPane.margin>
+            <Insets right="25.0" top="100.0" />
+         </StackPane.margin>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></TextField>
+      <Button fx:id="btn_feed" alignment="CENTER" mnemonicParsing="false" onAction="#toFeed" prefHeight="38.0" prefWidth="81.0" text="Feed" StackPane.alignment="BOTTOM_CENTER">
+         <StackPane.margin>
+            <Insets bottom="100.0" />
+         </StackPane.margin>
+         <font>
+            <Font name="Lucida Bright Demibold" size="21.0" />
+         </font></Button>
+      <ImageView fx:id="imageView_petImage" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/Dogs/little/Dog.gif" />
+         </image></ImageView>
+      <Label alignment="CENTER" prefHeight="32.0" prefWidth="71.0" text="Food:" StackPane.alignment="BOTTOM_CENTER">
+         <StackPane.margin>
+            <Insets bottom="50.0" right="120.0" />
+         </StackPane.margin>
+         <font>
+            <Font name="Lucida Fax Demibold" size="22.0" />
+         </font>
+      </Label>
+      <TextField fx:id="textField_food" alignment="CENTER" maxHeight="31.0" maxWidth="291.0" prefHeight="31.0" prefWidth="164.0" StackPane.alignment="BOTTOM_CENTER">
+         <StackPane.margin>
+            <Insets bottom="50.0" left="350.0" right="100.0" />
+         </StackPane.margin>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="textField_age" alignment="CENTER" layoutX="360.0" layoutY="393.0" maxHeight="31.0" maxWidth="164.0" prefHeight="31.0" prefWidth="164.0" text="(days)" StackPane.alignment="TOP_LEFT">
+         <StackPane.margin>
+            <Insets left="75.0" top="100.0" />
+         </StackPane.margin>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </TextField>
+      <Label prefHeight="26.0" prefWidth="57.0" text="Age:" StackPane.alignment="TOP_LEFT">
+         <StackPane.margin>
+            <Insets left="25.0" top="100.0" />
+         </StackPane.margin>
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label prefHeight="26.0" prefWidth="57.0" text="Mood:" StackPane.alignment="TOP_CENTER">
+         <StackPane.margin>
+            <Insets right="175.0" top="100.0" />
+         </StackPane.margin>
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Label prefHeight="26.0" prefWidth="57.0" text="Health:" StackPane.alignment="TOP_RIGHT">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <StackPane.margin>
+            <Insets right="200.0" top="100.0" />
+         </StackPane.margin></Label>
+      <TextField fx:id="textField_mood" maxHeight="31.0" maxWidth="164.0" prefHeight="31.0" prefWidth="164.0" StackPane.alignment="TOP_CENTER">
+         <StackPane.margin>
+            <Insets left="50.0" top="100.0" />
+         </StackPane.margin>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </TextField>
+      <Button fx:id="btn_updStatus" alignment="CENTER" layoutX="340.0" layoutY="333.0" mnemonicParsing="false" onAction="#toUpdPetStatus" prefHeight="34.0" prefWidth="232.0" text="Update pet status" StackPane.alignment="TOP_CENTER">
+         <font>
+            <Font name="Lucida Bright Demibold" size="21.0" />
+         </font>
+         <StackPane.margin>
+            <Insets top="30.0" />
+         </StackPane.margin>
+      </Button>
+      <Button fx:id="btn_back" mnemonicParsing="false" onAction="#goBack" prefHeight="27.0" prefWidth="67.0" text="Back" StackPane.alignment="BOTTOM_LEFT">
+         <StackPane.margin>
+            <Insets bottom="15.0" left="15.0" />
+         </StackPane.margin></Button>
+   </children>
+</StackPane>
