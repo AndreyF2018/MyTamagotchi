@@ -5,7 +5,6 @@ import com.github.cliftonlabs.json_simple.JsonObject;
 import com.github.cliftonlabs.json_simple.Jsoner;
 import models.Tamagotchi;
 
-
 import java.io.IOException;
 import java.io.Reader;
 import java.io.Writer;
@@ -15,7 +14,6 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.time.Duration;
 import java.time.LocalDateTime;
-
 
 public class DaoTama implements DaoInterface {
 
@@ -48,6 +46,7 @@ public class DaoTama implements DaoInterface {
 
     }
 
+    // Get time elapsed after death:
     @Override
     public Duration getTimeAfterDeath() throws IOException, JsonException {
         Duration timeAfterDeath = null;
@@ -69,10 +68,10 @@ public class DaoTama implements DaoInterface {
                 return false;
                 // If less than 1 hour has passed since the death of pet
             } else if (getTimeAfterDeath().toHours() < 1) {
-                //throw new NullPointerException("You can create a pet only 1 hour after the previous one left");
                 return false;
 
-            } else {
+            }
+            else {
                 return true;
             }
         }
@@ -80,41 +79,38 @@ public class DaoTama implements DaoInterface {
             return !isTamaExists();
         }
     }
+    // Writing pet data to json file when pet is created
        @Override
     public <T extends Tamagotchi> void createTama (String className, String name, LocalDateTime creationDate) throws IOException, JsonException, ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
-        if (isPossibleCreateTama()){
-            Writer writer = Files.newBufferedWriter(Paths.get("tamagotchiState.json"));
-            Class clazz = Class.forName("models." + className);
-            Class [] params = {String.class, LocalDateTime.class};
-            T pet = (T) clazz.getConstructor(params).newInstance(name, LocalDateTime.now());
-            Tamagotchi tamagotchi = pet;
-            JsonObject jsonTama = new JsonObject();
-            jsonTama.put("Type", className);
-            jsonTama.put("maxAge", tamagotchi.getMaxAge());
-            jsonTama.put("maxMood", tamagotchi.getMaxMood());
-            jsonTama.put("maxHealth", tamagotchi.getMaxHealth());
-            jsonTama.put("minAge", tamagotchi.getMinAge());
-            jsonTama.put("minMood", tamagotchi.getMinMood());
-            jsonTama.put("minHealth", tamagotchi.getMinHealth());
-            jsonTama.put("name", tamagotchi.getName());
-            jsonTama.put("age", tamagotchi.getAge());
-            jsonTama.put("mood", tamagotchi.getMood());
-            jsonTama.put("health", tamagotchi.getHealth());
-            creationDate = LocalDateTime.now();
-            jsonTama.put("creation_date", creationDate.toString());
-            jsonTama.put("last_feeding_date", creationDate.toString());
-            jsonTama.put("death_date", null);
-            jsonTama.put("feed", tamagotchi.getFeed());
-            Jsoner.serialize(jsonTama, writer);
-            writer.close();
-        }
-        else {
-            //throw new NullPointerException("You have already created a character");
-            //System.out.println("You have already created a character from create Tama");
+           //Creating a generic instance:
+           Class clazz = Class.forName("models." + className);
+           Class[] params = {String.class, LocalDateTime.class};
+           T pet = (T) clazz.getConstructor(params).newInstance(name, LocalDateTime.now());
+           Tamagotchi tamagotchi = pet;
+           //Creating a json file and writing data to it
+           Writer writer = Files.newBufferedWriter(Paths.get("tamagotchiState.json"));
+           JsonObject jsonTama = new JsonObject();
+           jsonTama.put("Type", className);
+           jsonTama.put("maxAge", tamagotchi.getMaxAge());
+           jsonTama.put("maxMood", tamagotchi.getMaxMood());
+           jsonTama.put("maxHealth", tamagotchi.getMaxHealth());
+           jsonTama.put("minAge", tamagotchi.getMinAge());
+           jsonTama.put("minMood", tamagotchi.getMinMood());
+           jsonTama.put("minHealth", tamagotchi.getMinHealth());
+           jsonTama.put("name", tamagotchi.getName());
+           jsonTama.put("age", tamagotchi.getAge());
+           jsonTama.put("mood", tamagotchi.getMood());
+           jsonTama.put("health", tamagotchi.getHealth());
+           creationDate = LocalDateTime.now();
+           jsonTama.put("creation_date", creationDate.toString());
+           jsonTama.put("last_feeding_date", creationDate.toString());
+           jsonTama.put("death_date", null);
+           jsonTama.put("feed", tamagotchi.getFeed());
+           Jsoner.serialize(jsonTama, writer);
+           writer.close();
+       }
 
-        }
-    }
-
+       //"Killing" a pet:
     @Override
     public void deleteTama() throws IOException {
         Writer writer = Files.newBufferedWriter(Paths.get("tamagotchiState.json"));
@@ -138,6 +134,7 @@ public class DaoTama implements DaoInterface {
         writer.close();
     }
 
+    //Updating the json file:
     @Override
     public <T extends Tamagotchi> void updateTamaState(String className, T tamagotchi) throws IOException {
         Writer writer = Files.newBufferedWriter(Paths.get("tamagotchiState.json"));
@@ -177,12 +174,12 @@ public class DaoTama implements DaoInterface {
 
     }
 
+    //Getting pet data from json file:
     @Override
     public <T extends Tamagotchi> T getTama() throws ClassNotFoundException, IllegalAccessException, InstantiationException, NoSuchMethodException, InvocationTargetException, IOException, JsonException {
 
         T tamagotchi = null;
         String className = null;
-        // if (isTamaExists() && !isTamaDied()) {
         Reader reader = Files.newBufferedReader(Paths.get("tamagotchiState.json"));
         JsonObject parser = (JsonObject) Jsoner.deserialize(reader);
         className = parser.get("Type").toString();
@@ -214,19 +211,15 @@ public class DaoTama implements DaoInterface {
         if (mood < minMood) {
             health = maxHealth - Math.abs(mood);
         }
+        //Creating a generic instance:
         Class clazz = Class.forName("models." + className);
         Class[] params = {String.class, int.class, int.class, int.class, LocalDateTime.class, LocalDateTime.class, LocalDateTime.class};
         tamagotchi = (T) clazz.getConstructor(params).newInstance(name, age, mood, health, creationDate, lastFeedingDate, dethDate);
         reader.close();
-        //}
-
         if (tamagotchi != null) {
             // Update state of the tamagotchi in JSON
             updateTamaState(className, tamagotchi);
-
         }
         return tamagotchi;
     }
-
-
 }

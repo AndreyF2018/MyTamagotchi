@@ -5,15 +5,11 @@ import dao.DaoInterface;
 import dao.DaoTama;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.stage.Modality;
+
 import javafx.stage.Stage;
-import models.Tamagotchi;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
@@ -26,9 +22,7 @@ public class CreatePetController {
     private TextField textFieldName;
     @FXML
     private Button btn_back;
-
     private DaoInterface daoTama = new DaoTama();
-
     @FXML
     public void createTama(ActionEvent actionEvent) throws IOException, JsonException, ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchFieldException {
 
@@ -57,6 +51,7 @@ public class CreatePetController {
                 alert.setContentText("You can create a pet only 1 hour after the previous one left");
                 alert.show();
             }
+            // If everything is ok and you can create a pet
             else if (daoTama.isPossibleCreateTama()) {
                 daoTama.createTama(pressedButton.getText(), textFieldName.getText(), LocalDateTime.now());
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -64,7 +59,6 @@ public class CreatePetController {
                 alert.setHeaderText("Congratulations!!");
                 alert.setContentText("You have created your pet! Don't forget to look after him!");
                 alert.show();
-
             }
         }
 
@@ -75,14 +69,6 @@ public class CreatePetController {
         Stage stage = (Stage) btn_back.getScene().getWindow();
         stage.close();
         changeSceneController.changeScene(stage, "Main.fxml");
-        /*
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/views/Main.fxml"));
-        Parent root = (Parent) fxmlLoader.load();
-        stage = new Stage();
-        stage.initModality(Modality.APPLICATION_MODAL);
-        stage.setScene(new Scene(root));
-        stage.show();
-        */
     }
 
 }

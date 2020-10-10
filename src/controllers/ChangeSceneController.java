@@ -7,7 +7,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-
+// Controller that realizing scene transition methods
 public class ChangeSceneController {
 
     public void changeScene(Stage stage, String sceneName) throws IOException {

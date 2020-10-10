@@ -1,1 +1,15 @@
-{"mood":141,"minHealth":1,"health":180,"creation_date":"2020-10-10T22:54:59.977","minMood":1,"death_date":null,"feed":"Pedigree","Type":"Dog","maxAge":8,"maxMood":180,"minAge":0,"name":"ghj","last_feeding_date":"2020-10-10T22:54:59.977","maxHealth":180,"age":0}
+{"mood": null,
+  "minHealth":null,
+  "health":null,
+  "minMood":null,
+  "creation_date": null,
+  "death_date":null,
+  "Type": null,
+  "maxAge":null,
+  "maxMood":null,
+  "minAge":null,
+  "name": null,
+  "last_feeding_date": null,
+  "maxHealth": null,
+  "age": null
+}

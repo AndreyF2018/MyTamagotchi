@@ -3,21 +3,16 @@ package controllers;
 import com.github.cliftonlabs.json_simple.JsonException;
 import dao.DaoInterface;
 import dao.DaoTama;
-import javafx.animation.FadeTransition;
 import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import models.Tamagotchi;
@@ -30,8 +25,6 @@ public class PetController {
 
     private DaoInterface daoTama = new DaoTama();
     private ChangeSceneController changeSceneController = new ChangeSceneController();
-    @FXML
-    private StackPane stackPane;
     @FXML
     private Button btn_back;
     @FXML
@@ -52,6 +45,7 @@ public class PetController {
         imageView_petImage.setImage(image);
     }
 
+    // Method for checking and updating pet status
     public <T extends Tamagotchi> void petStatusCheck (T tamagotchi) throws IOException {
         // If the pet has lived all its years
         if (tamagotchi.getAge() > tamagotchi.getMaxAge()){
@@ -82,7 +76,8 @@ public class PetController {
             alert.setContentText("You did not feed your pet for a long time, and he became sad. Feed him now!");
             alert.show();
         }
-        daoTama.updateTamaState(tamagotchi.getClass().getSimpleName(), tamagotchi);
+        daoTama.updateTamaState(tamagotchi.getClass().getSimpleName(), tamagotchi); // update status pet
+        // Displays pet characteristics from 0 to 100:
         int displayedMood = tamagotchi.getMood() * 100 / tamagotchi.getMaxMood();
         int displayedHealth = tamagotchi.getHealth() * 100 / tamagotchi.getMaxHealth();
         textField_age.setText(Integer.toString(tamagotchi.getAge()) + " " + "(days)");
@@ -93,6 +88,7 @@ public class PetController {
 
     }
 
+    // Feeding pet by pressing the button
     @FXML
     public void toFeed(ActionEvent actionEvent) throws IllegalAccessException, InvocationTargetException, JsonException, InstantiationException, IOException, NoSuchMethodException, ClassNotFoundException {
         Tamagotchi tamagotchi = daoTama.getTama();
@@ -108,6 +104,7 @@ public class PetController {
         petStatusCheck(tamagotchi);
     }
 
+    // Updating pet stats by pressing the button
     @FXML
     public void toUpdPetStatus(ActionEvent actionEvent) throws IllegalAccessException, InvocationTargetException, JsonException, InstantiationException, IOException, NoSuchMethodException, ClassNotFoundException {
         Tamagotchi tamagotchi = daoTama.getTama();
@@ -121,6 +118,7 @@ public class PetController {
         changeSceneController.changeScene(stage, "Main.fxml");
     }
 
+    // Method for setting animation of the cyclic movement of the pet
     public void setAnimation(){
         TranslateTransition trans = new TranslateTransition(Duration.seconds(10), imageView_petImage);
         final int[] petX = {1}; // scaling factor
@@ -146,7 +144,7 @@ public class PetController {
     }
     @FXML
     public void initialize()  {
-        // Animation of the cyclic movement of the pet:
+        // Setting of animation of the cyclic movement of the pet:
         setAnimation();
 
     }

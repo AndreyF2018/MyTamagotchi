@@ -1,7 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/json-simple-3.1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyTamagotchi/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyTamagotchi/META-INF/MyTamagotchi.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyTamagotchi/controllers/CreatePetController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyTamagotchi/controllers/CreatePetController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyTamagotchi/controllers/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyTamagotchi/controllers/MainController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyTamagotchi/controllers/PetController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyTamagotchi/controllers/PetController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyTamagotchi/controllers/PetController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyTamagotchi/controllers/PetController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyTamagotchi/dao/DaoTama.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyTamagotchi/dao/DaoTama.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyTamagotchi/json-simple-3.1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyTamagotchi/tama.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyTamagotchi/tamagotchiNullState.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyTamagotchi/tamagotchiState.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/ChangeSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/ChangeSceneController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/CreatePetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/CreatePetController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/PetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/PetController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/DaoInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/DaoInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/DaoTama.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/DaoTama.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tamagotchiState.json" beforeDir="false" afterPath="$PROJECT_DIR$/tamagotchiState.json" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,8 +89,12 @@
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectId" id="1iT4Pe1eaQ7TRrPMNlDh2KFMZry" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectReloadState">
     <option name="STATE" value="0" />
   </component>
@@ -219,11 +246,23 @@
       <workItem from="1602258104536" duration="11801000" />
       <workItem from="1602269938572" duration="12427000" />
       <workItem from="1602341820361" duration="20047000" />
+      <workItem from="1602362608108" duration="3953000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
