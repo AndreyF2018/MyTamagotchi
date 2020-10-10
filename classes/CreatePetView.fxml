@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="501.0" prefWidth="710.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.CreatePetController">
+   <children>
+      <ImageView id="image_parrot" fitHeight="165.0" fitWidth="146.0" layoutX="222.0" layoutY="148.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_RIGHT">
+         <image>
+            <Image url="@../images/Parrots/parrot_sitting.gif" />
+         </image>
+         <StackPane.margin>
+            <Insets bottom="60.0" />
+         </StackPane.margin>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="222.0" layoutY="148.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/Dogs/dog_sitting.gif" />
+         </image>
+         <StackPane.margin>
+            <Insets bottom="60.0" left="40.0" />
+         </StackPane.margin>
+      </ImageView>
+      <Button fx:id="btn_cat" mnemonicParsing="false" onAction="#createTama" prefHeight="40.0" prefWidth="83.0" text="Cat" StackPane.alignment="BOTTOM_LEFT">
+         <StackPane.margin>
+            <Insets bottom="120.0" left="40.0" />
+         </StackPane.margin>
+         <font>
+            <Font name="Bookman Old Style Bold" size="17.0" />
+         </font>
+      </Button>
+      <Button fx:id="btn_dog" layoutX="50.0" layoutY="380.0" mnemonicParsing="false" onAction="#createTama" prefHeight="40.0" prefWidth="83.0" text="Dog" StackPane.alignment="BOTTOM_CENTER">
+         <font>
+            <Font name="Bookman Old Style Bold" size="17.0" />
+         </font>
+         <StackPane.margin>
+            <Insets bottom="120.0" />
+         </StackPane.margin>
+      </Button>
+      <Button fx:id="btn_parrot" layoutX="281.0" layoutY="395.0" mnemonicParsing="false" onAction="#createTama" prefHeight="40.0" prefWidth="83.0" text="Parrot" StackPane.alignment="BOTTOM_RIGHT">
+         <font>
+            <Font name="Bookman Old Style Bold" size="17.0" />
+         </font>
+         <StackPane.margin>
+            <Insets bottom="120.0" right="40.0" />
+         </StackPane.margin>
+      </Button>
+      <Button fx:id="btn_back" mnemonicParsing="false" onAction="#goBack" prefHeight="29.0" prefWidth="69.0" text="Back" StackPane.alignment="BOTTOM_LEFT">
+         <StackPane.margin>
+            <Insets bottom="15.0" left="15.0" />
+         </StackPane.margin>
+      </Button>
+      <ImageView id="image_cat" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
+         <image>
+            <Image url="@../images/Cats/cat_sitting.gif" />
+         </image>
+         <StackPane.margin>
+            <Insets bottom="60.0" />
+         </StackPane.margin>
+      </ImageView>
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="36.0" prefWidth="90.0" text="Name: " StackPane.alignment="TOP_CENTER">
+         <StackPane.margin>
+            <Insets top="15.0" />
+         </StackPane.margin>
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <TextField fx:id="textFieldName" alignment="CENTER" prefHeight="25.0" prefWidth="460.0" StackPane.alignment="TOP_CENTER">
+         <StackPane.margin>
+            <Insets left="175.0" right="175.0" top="60.0" />
+         </StackPane.margin>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </TextField>
+   </children>
+</StackPane>
